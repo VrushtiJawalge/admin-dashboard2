@@ -1,0 +1,1186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Content Studio - Admin Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="logo">
+          <div class="logo-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h2>AI Content Studio</h2>
+        </div>
+
+        <nav>
+          <div class="nav-section">
+            <div class="nav-section-title">Main</div>
+            <div class="nav-item active">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+            </div>
+            <div class="nav-item">
+              <i class="fas fa-chart-line"></i>
+              <span>Analytics</span>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-section-title">Resume Tools</div>
+            <div class="nav-item">
+              <i class="fas fa-file-alt"></i>
+              <span>Resume Analyzer</span>
+            </div>
+            <div class="nav-item">
+              <i class="fas fa-pen"></i>
+              <span>Resume Creator</span>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-section-title">Blog Tools</div>
+            <div class="nav-item">
+              <i class="fas fa-blog"></i>
+              <span>Blog Analyzer</span>
+            </div>
+            <div class="nav-item">
+              <i class="fas fa-edit"></i>
+              <span>Blog Creator</span>
+            </div>
+          </div>
+
+          <div class="nav-section">
+            <div class="nav-section-title">System</div>
+            <div class="nav-item">
+              <i class="fas fa-users"></i>
+              <span>Users</span>
+            </div>
+            <div class="nav-item">
+              <i class="fas fa-cog"></i>
+              <span>Settings</span>
+            </div>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Top Header Bar -->
+        <div class="top-header">
+          <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input
+              type="text"
+              class="search-box"
+              placeholder="Search users, resumes, blogs..."
+            />
+          </div>
+
+          <div class="header-actions">
+            <button class="header-btn" title="Add New">
+              <i class="fas fa-plus"></i>
+            </button>
+
+            <button class="header-btn" title="Messages">
+              <i class="fas fa-envelope"></i>
+              <span class="notification-badge"></span>
+            </button>
+
+            <button class="header-btn" title="Notifications">
+              <i class="fas fa-bell"></i>
+              <span class="notification-badge"></span>
+            </button>
+
+            <button class="header-btn" title="Settings">
+              <i class="fas fa-cog"></i>
+            </button>
+
+            <div class="admin-profile">
+              <div class="admin-avatar">AD</div>
+              <div class="admin-info">
+                <h4>Admin User</h4>
+                <p>Super Admin</p>
+              </div>
+              <i
+                class="fas fa-chevron-down"
+                style="color: #94a3b8; font-size: 11px"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-wrapper">
+          <div class="header">
+            <h1>Dashboard Overview</h1>
+            <p>Monitor your AI-powered content creation and analysis</p>
+          </div>
+
+          <!-- Stats Grid -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-header">
+                <h3>Resumes Analyzed</h3>
+                <div class="stat-icon blue">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+              </div>
+              <div class="stat-value">1,247</div>
+              <div class="stat-change">
+                <i class="fas fa-arrow-up"></i> 12% this month
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-header">
+                <h3>Resumes Created</h3>
+                <div class="stat-icon green">
+                  <i class="fas fa-pen"></i>
+                </div>
+              </div>
+              <div class="stat-value">856</div>
+              <div class="stat-change">
+                <i class="fas fa-arrow-up"></i> 8% this month
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-header">
+                <h3>Blogs Analyzed</h3>
+                <div class="stat-icon purple">
+                  <i class="fas fa-blog"></i>
+                </div>
+              </div>
+              <div class="stat-value">2,134</div>
+              <div class="stat-change">
+                <i class="fas fa-arrow-up"></i> 15% this month
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-header">
+                <h3>Blogs Created</h3>
+                <div class="stat-icon orange">
+                  <i class="fas fa-edit"></i>
+                </div>
+              </div>
+              <div class="stat-value">643</div>
+              <div class="stat-change">
+                <i class="fas fa-arrow-up"></i> 10% this month
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Stats Cards -->
+          <div class="quick-stats">
+            <div class="quick-stat-card">
+              <div
+                class="quick-stat-icon"
+                style="background: #dbeafe; color: #3b82f6"
+              >
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="quick-stat-info">
+                <h4>Total Users</h4>
+                <p class="quick-stat-value">2,547</p>
+                <span class="quick-stat-label">+124 this week</span>
+              </div>
+            </div>
+            <div class="quick-stat-card">
+              <div
+                class="quick-stat-icon"
+                style="background: #dcfce7; color: #22c55e"
+              >
+                <i class="fas fa-user-check"></i>
+              </div>
+              <div class="quick-stat-info">
+                <h4>Active Now</h4>
+                <p class="quick-stat-value">156</p>
+                <span class="quick-stat-label">Online users</span>
+              </div>
+            </div>
+            <div class="quick-stat-card">
+              <div
+                class="quick-stat-icon"
+                style="background: #fae8ff; color: #a855f7"
+              >
+                <i class="fas fa-crown"></i>
+              </div>
+              <div class="quick-stat-info">
+                <h4>Premium Users</h4>
+                <p class="quick-stat-value">847</p>
+                <span class="quick-stat-label">33% of total</span>
+              </div>
+            </div>
+            <div class="quick-stat-card">
+              <div
+                class="quick-stat-icon"
+                style="background: #fff7ed; color: #f97316"
+              >
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="quick-stat-info">
+                <h4>Avg. Session</h4>
+                <p class="quick-stat-value">24m</p>
+                <span class="quick-stat-label">Per user</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analytics Charts -->
+          <div class="charts-grid">
+            <!-- Main Activity Chart -->
+            <div class="chart-card">
+              <div class="chart-header">
+                <div class="chart-title">
+                  <h3>Activity Overview</h3>
+                  <p>Track your platform usage and engagement</p>
+                </div>
+                <div class="chart-filters">
+                  <button class="filter-btn" onclick="updateChart('daily')">
+                    Daily
+                  </button>
+                  <button
+                    class="filter-btn active"
+                    onclick="updateChart('weekly')"
+                  >
+                    Weekly
+                  </button>
+                  <button class="filter-btn" onclick="updateChart('monthly')">
+                    Monthly
+                  </button>
+                </div>
+              </div>
+              <div class="chart-container">
+                <canvas id="activityChart"></canvas>
+              </div>
+            </div>
+
+            <!-- Stats Breakdown -->
+            <div class="chart-card">
+              <div class="chart-header">
+                <div class="chart-title">
+                  <h3>Top Metrics</h3>
+                  <p>Key performance indicators</p>
+                </div>
+              </div>
+              <div class="stats-list">
+                <div class="stat-item">
+                  <div class="stat-item-info">
+                    <div
+                      class="stat-item-icon"
+                      style="background: #dbeafe; color: #3b82f6"
+                    >
+                      <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="stat-item-details">
+                      <h4>Resume Analysis</h4>
+                      <p>This week</p>
+                    </div>
+                  </div>
+                  <div class="stat-item-value">
+                    <div class="stat-item-number">342</div>
+                    <div class="stat-item-change positive">
+                      <i class="fas fa-arrow-up"></i> 12%
+                    </div>
+                  </div>
+                </div>
+
+                <div class="stat-item">
+                  <div class="stat-item-info">
+                    <div
+                      class="stat-item-icon"
+                      style="background: #dcfce7; color: #22c55e"
+                    >
+                      <i class="fas fa-pen"></i>
+                    </div>
+                    <div class="stat-item-details">
+                      <h4>Resume Creation</h4>
+                      <p>This week</p>
+                    </div>
+                  </div>
+                  <div class="stat-item-value">
+                    <div class="stat-item-number">218</div>
+                    <div class="stat-item-change positive">
+                      <i class="fas fa-arrow-up"></i> 8%
+                    </div>
+                  </div>
+                </div>
+
+                <div class="stat-item">
+                  <div class="stat-item-info">
+                    <div
+                      class="stat-item-icon"
+                      style="background: #fae8ff; color: #a855f7"
+                    >
+                      <i class="fas fa-blog"></i>
+                    </div>
+                    <div class="stat-item-details">
+                      <h4>Blog Analysis</h4>
+                      <p>This week</p>
+                    </div>
+                  </div>
+                  <div class="stat-item-value">
+                    <div class="stat-item-number">456</div>
+                    <div class="stat-item-change positive">
+                      <i class="fas fa-arrow-up"></i> 15%
+                    </div>
+                  </div>
+                </div>
+
+                <div class="stat-item">
+                  <div class="stat-item-info">
+                    <div
+                      class="stat-item-icon"
+                      style="background: #fff7ed; color: #f97316"
+                    >
+                      <i class="fas fa-edit"></i>
+                    </div>
+                    <div class="stat-item-details">
+                      <h4>Blog Creation</h4>
+                      <p>This week</p>
+                    </div>
+                  </div>
+                  <div class="stat-item-value">
+                    <div class="stat-item-number">187</div>
+                    <div class="stat-item-change negative">
+                      <i class="fas fa-arrow-down"></i> 3%
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Activity Section -->
+          <div class="content-section">
+            <div class="section-header">
+              <div class="section-title">
+                <div class="section-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div>
+                  <h2>Active Users</h2>
+                  <p style="font-size: 13px; color: #94a3b8; margin-top: 4px">
+                    Users currently logged in and their activity
+                  </p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: center">
+                <div class="user-filters">
+                  <select
+                    class="filter-select"
+                    id="statusFilter"
+                    onchange="filterUsers()"
+                  >
+                    <option value="all">All Status</option>
+                    <option value="online">Online</option>
+                    <option value="idle">Idle</option>
+                    <option value="offline">Offline</option>
+                  </select>
+                  <select
+                    class="filter-select"
+                    id="userTypeFilter"
+                    onchange="filterUsers()"
+                  >
+                    <option value="all">All Users</option>
+                    <option value="premium">Premium</option>
+                    <option value="standard">Standard</option>
+                  </select>
+                  <select
+                    class="filter-select"
+                    id="deviceFilter"
+                    onchange="filterUsers()"
+                  >
+                    <option value="all">All Devices</option>
+                    <option value="desktop">Desktop</option>
+                    <option value="mobile">Mobile</option>
+                    <option value="tablet">Tablet</option>
+                  </select>
+                </div>
+                <button class="btn btn-primary">
+                  <i class="fas fa-user-plus"></i> Add User
+                </button>
+              </div>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Login Time</th>
+                  <th>IP Address</th>
+                  <th>Device</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="userTableBody">
+                <tr
+                  data-status="online"
+                  data-type="premium"
+                  data-device="desktop"
+                >
+                  <td>
+                    <div class="item-cell">
+                      <div
+                        class="item-icon"
+                        style="
+                          background: linear-gradient(
+                            135deg,
+                            #6366f1 0%,
+                            #8b5cf6 100%
+                          );
+                          color: white;
+                        "
+                      >
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div class="item-info">
+                        <h4>John Anderson</h4>
+                        <p>Premium User</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>john.anderson@email.com</td>
+                  <td>+1 (555) 123-4567</td>
+                  <td>10:45 AM</td>
+                  <td>192.168.1.100</td>
+                  <td>
+                    <div style="display: flex; align-items: center; gap: 6px">
+                      <i class="fas fa-desktop" style="color: #64748b"></i>
+                      <span>Desktop</span>
+                    </div>
+                  </td>
+                  <td><span class="badge active">Online</span></td>
+                  <td>
+                    <div class="action-btns">
+                      <button class="action-btn" title="View Profile">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="action-btn" title="Send Message">
+                        <i class="fas fa-envelope"></i>
+                      </button>
+                      <button class="action-btn" title="More Options">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  data-status="online"
+                  data-type="standard"
+                  data-device="mobile"
+                >
+                  <td>
+                    <div class="item-cell">
+                      <div
+                        class="item-icon"
+                        style="
+                          background: linear-gradient(
+                            135deg,
+                            #ec4899 0%,
+                            #f43f5e 100%
+                          );
+                          color: white;
+                        "
+                      >
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div class="item-info">
+                        <h4>Sarah Williams</h4>
+                        <p>Standard User</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>sarah.williams@email.com</td>
+                  <td>+1 (555) 234-5678</td>
+                  <td>11:20 AM</td>
+                  <td>192.168.1.105</td>
+                  <td>
+                    <div style="display: flex; align-items: center; gap: 6px">
+                      <i class="fas fa-mobile-alt" style="color: #64748b"></i>
+                      <span>Mobile</span>
+                    </div>
+                  </td>
+                  <td><span class="badge active">Online</span></td>
+                  <td>
+                    <div class="action-btns">
+                      <button class="action-btn" title="View Profile">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="action-btn" title="Send Message">
+                        <i class="fas fa-envelope"></i>
+                      </button>
+                      <button class="action-btn" title="More Options">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  data-status="online"
+                  data-type="premium"
+                  data-device="tablet"
+                >
+                  <td>
+                    <div class="item-cell">
+                      <div
+                        class="item-icon"
+                        style="
+                          background: linear-gradient(
+                            135deg,
+                            #14b8a6 0%,
+                            #06b6d4 100%
+                          );
+                          color: white;
+                        "
+                      >
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div class="item-info">
+                        <h4>Michael Chen</h4>
+                        <p>Premium User</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>michael.chen@email.com</td>
+                  <td>+1 (555) 345-6789</td>
+                  <td>09:30 AM</td>
+                  <td>192.168.1.112</td>
+                  <td>
+                    <div style="display: flex; align-items: center; gap: 6px">
+                      <i class="fas fa-tablet-alt" style="color: #64748b"></i>
+                      <span>Tablet</span>
+                    </div>
+                  </td>
+                  <td><span class="badge active">Online</span></td>
+                  <td>
+                    <div class="action-btns">
+                      <button class="action-btn" title="View Profile">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="action-btn" title="Send Message">
+                        <i class="fas fa-envelope"></i>
+                      </button>
+                      <button class="action-btn" title="More Options">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  data-status="idle"
+                  data-type="standard"
+                  data-device="desktop"
+                >
+                  <td>
+                    <div class="item-cell">
+                      <div
+                        class="item-icon"
+                        style="
+                          background: linear-gradient(
+                            135deg,
+                            #f59e0b 0%,
+                            #f97316 100%
+                          );
+                          color: white;
+                        "
+                      >
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div class="item-info">
+                        <h4>Emily Rodriguez</h4>
+                        <p>Standard User</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>emily.rodriguez@email.com</td>
+                  <td>+1 (555) 456-7890</td>
+                  <td>08:15 AM</td>
+                  <td>192.168.1.120</td>
+                  <td>
+                    <div style="display: flex; align-items: center; gap: 6px">
+                      <i class="fas fa-desktop" style="color: #64748b"></i>
+                      <span>Desktop</span>
+                    </div>
+                  </td>
+                  <td>
+                    <span
+                      class="badge"
+                      style="background: #fef3c7; color: #92400e"
+                      >Idle</span
+                    >
+                  </td>
+                  <td>
+                    <div class="action-btns">
+                      <button class="action-btn" title="View Profile">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="action-btn" title="Send Message">
+                        <i class="fas fa-envelope"></i>
+                      </button>
+                      <button class="action-btn" title="More Options">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  data-status="online"
+                  data-type="premium"
+                  data-device="mobile"
+                >
+                  <td>
+                    <div class="item-cell">
+                      <div
+                        class="item-icon"
+                        style="
+                          background: linear-gradient(
+                            135deg,
+                            #8b5cf6 0%,
+                            #a855f7 100%
+                          );
+                          color: white;
+                        "
+                      >
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div class="item-info">
+                        <h4>David Thompson</h4>
+                        <p>Premium User</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>david.thompson@email.com</td>
+                  <td>+1 (555) 567-8901</td>
+                  <td>11:50 AM</td>
+                  <td>192.168.1.135</td>
+                  <td>
+                    <div style="display: flex; align-items: center; gap: 6px">
+                      <i class="fas fa-mobile-alt" style="color: #64748b"></i>
+                      <span>Mobile</span>
+                    </div>
+                  </td>
+                  <td><span class="badge active">Online</span></td>
+                  <td>
+                    <div class="action-btns">
+                      <button class="action-btn" title="View Profile">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="action-btn" title="Send Message">
+                        <i class="fas fa-envelope"></i>
+                      </button>
+                      <button class="action-btn" title="More Options">
+                        <i class="fas fa-ellipsis-v"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Resume Activity -->
+          <div class="content-section">
+            <div class="section-header">
+              <div class="section-title">
+                <div class="section-icon">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <h2>Recent Resume Activity</h2>
+              </div>
+              <button class="btn btn-primary">
+                <i class="fas fa-plus"></i> New Resume
+              </button>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Candidate</th>
+                  <th>Type</th>
+                  <th>Score</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="item-cell">
+                      <div
+                        class="item-icon"
+                        style="background: #dbeafe; color: #3b82f6"
+                      >
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div class="item-info">
+                        <h4>Michael Chen</h4>
+                        <p>Software Engineer</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge analyze">Analyze</span></td>
+                  <td><strong>92/100</strong></td>
+                  <td><span class="badge active">Completed</span></td>
+                  <td>10 mins ago</td>
+                  <td>
+                    <div class="action-btns">
+                      <button class="action-btn">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="action-btn">
+                        <i class="fas fa-download"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="item-cell">
+                      <div
+                        class="item-icon"
+                        style="background: #fae8ff; color: #a855f7"
+                      >
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div class="item-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>Product Manager</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge create">Create</span></td>
+                  <td>-</td>
+                  <td><span class="badge pending">In Progress</span></td>
+                  <td>25 mins ago</td>
+                  <td>
+                    <div class="action-btns">
+                      <button class="action-btn">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="action-btn">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="item-cell">
+                      <div
+                        class="item-icon"
+                        style="background: #dcfce7; color: #22c55e"
+                      >
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div class="item-info">
+                        <h4>David Martinez</h4>
+                        <p>Data Analyst</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge analyze">Analyze</span></td>
+                  <td><strong>78/100</strong></td>
+                  <td><span class="badge active">Completed</span></td>
+                  <td>1 hour ago</td>
+                  <td>
+                    <div class="action-btns">
+                      <button class="action-btn">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="action-btn">
+                        <i class="fas fa-download"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Blog Activity -->
+          <div class="content-section">
+            <div class="section-header">
+              <div class="section-title">
+                <div class="section-icon">
+                  <i class="fas fa-blog"></i>
+                </div>
+                <h2>Recent Blog Activity</h2>
+              </div>
+              <button class="btn btn-primary">
+                <i class="fas fa-plus"></i> New Blog
+              </button>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Type</th>
+                  <th>Author</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="item-cell">
+                      <div
+                        class="item-icon"
+                        style="background: #dbeafe; color: #3b82f6"
+                      >
+                        <i class="fas fa-newspaper"></i>
+                      </div>
+                      <div class="item-info">
+                        <h4>10 Tips for Better Resume Writing</h4>
+                        <p>Career Advice</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge create">Create</span></td>
+                  <td>John Doe</td>
+                  <td><span class="badge active">Published</span></td>
+                  <td>2 days ago</td>
+                  <td>
+                    <div class="action-btns">
+                      <button class="action-btn">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="action-btn">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="item-cell">
+                      <div
+                        class="item-icon"
+                        style="background: #fae8ff; color: #a855f7"
+                      >
+                        <i class="fas fa-newspaper"></i>
+                      </div>
+                      <div class="item-info">
+                        <h4>SEO Best Practices 2024</h4>
+                        <p>Marketing</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge analyze">Analyze</span></td>
+                  <td>Jane Smith</td>
+                  <td><span class="badge active">Completed</span></td>
+                  <td>5 hours ago</td>
+                  <td>
+                    <div class="action-btns">
+                      <button class="action-btn">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="action-btn">
+                        <i class="fas fa-download"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="item-cell">
+                      <div
+                        class="item-icon"
+                        style="background: #fff7ed; color: #f97316"
+                      >
+                        <i class="fas fa-newspaper"></i>
+                      </div>
+                      <div class="item-info">
+                        <h4>Remote Work Guide</h4>
+                        <p>Productivity</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge create">Create</span></td>
+                  <td>Bob Wilson</td>
+                  <td><span class="badge pending">Draft</span></td>
+                  <td>1 day ago</td>
+                  <td>
+                    <div class="action-btns">
+                      <button class="action-btn">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="action-btn">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // Wait for DOM to be fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Chart Data
+        const chartData = {
+          daily: {
+            labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+            datasets: [
+              {
+                label: "Resume Analysis",
+                data: [45, 52, 48, 65, 58, 42, 38],
+                borderColor: "#3b82f6",
+                backgroundColor: "rgba(59, 130, 246, 0.1)",
+                tension: 0.4,
+                fill: true,
+                borderWidth: 2,
+              },
+              {
+                label: "Resume Creation",
+                data: [32, 38, 35, 42, 40, 28, 25],
+                borderColor: "#22c55e",
+                backgroundColor: "rgba(34, 197, 94, 0.1)",
+                tension: 0.4,
+                fill: true,
+                borderWidth: 2,
+              },
+              {
+                label: "Blog Analysis",
+                data: [58, 65, 62, 78, 72, 55, 48],
+                borderColor: "#a855f7",
+                backgroundColor: "rgba(168, 85, 247, 0.1)",
+                tension: 0.4,
+                fill: true,
+                borderWidth: 2,
+              },
+              {
+                label: "Blog Creation",
+                data: [28, 32, 30, 38, 35, 25, 22],
+                borderColor: "#f97316",
+                backgroundColor: "rgba(249, 115, 22, 0.1)",
+                tension: 0.4,
+                fill: true,
+                borderWidth: 2,
+              },
+            ],
+          },
+          weekly: {
+            labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
+            datasets: [
+              {
+                label: "Resume Analysis",
+                data: [320, 385, 410, 342],
+                borderColor: "#3b82f6",
+                backgroundColor: "rgba(59, 130, 246, 0.1)",
+                tension: 0.4,
+                fill: true,
+                borderWidth: 2,
+              },
+              {
+                label: "Resume Creation",
+                data: [210, 245, 268, 218],
+                borderColor: "#22c55e",
+                backgroundColor: "rgba(34, 197, 94, 0.1)",
+                tension: 0.4,
+                fill: true,
+                borderWidth: 2,
+              },
+              {
+                label: "Blog Analysis",
+                data: [425, 480, 510, 456],
+                borderColor: "#a855f7",
+                backgroundColor: "rgba(168, 85, 247, 0.1)",
+                tension: 0.4,
+                fill: true,
+                borderWidth: 2,
+              },
+              {
+                label: "Blog Creation",
+                data: [165, 185, 198, 187],
+                borderColor: "#f97316",
+                backgroundColor: "rgba(249, 115, 22, 0.1)",
+                tension: 0.4,
+                fill: true,
+                borderWidth: 2,
+              },
+            ],
+          },
+          monthly: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+            datasets: [
+              {
+                label: "Resume Analysis",
+                data: [1250, 1420, 1580, 1680, 1520, 1247],
+                borderColor: "#3b82f6",
+                backgroundColor: "rgba(59, 130, 246, 0.1)",
+                tension: 0.4,
+                fill: true,
+                borderWidth: 2,
+              },
+              {
+                label: "Resume Creation",
+                data: [820, 945, 1020, 1085, 980, 856],
+                borderColor: "#22c55e",
+                backgroundColor: "rgba(34, 197, 94, 0.1)",
+                tension: 0.4,
+                fill: true,
+                borderWidth: 2,
+              },
+              {
+                label: "Blog Analysis",
+                data: [1850, 2120, 2280, 2420, 2180, 2134],
+                borderColor: "#a855f7",
+                backgroundColor: "rgba(168, 85, 247, 0.1)",
+                tension: 0.4,
+                fill: true,
+                borderWidth: 2,
+              },
+              {
+                label: "Blog Creation",
+                data: [580, 665, 720, 780, 710, 643],
+                borderColor: "#f97316",
+                backgroundColor: "rgba(249, 115, 22, 0.1)",
+                tension: 0.4,
+                fill: true,
+                borderWidth: 2,
+              },
+            ],
+          },
+        };
+
+        // Initialize Chart
+        const ctx = document.getElementById("activityChart");
+        if (ctx) {
+          window.activityChart = new Chart(ctx, {
+            type: "line",
+            data: chartData.weekly,
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: {
+                  display: true,
+                  position: "bottom",
+                  labels: {
+                    usePointStyle: true,
+                    padding: 15,
+                    font: {
+                      size: 12,
+                      family: "'Inter', sans-serif",
+                    },
+                  },
+                },
+                tooltip: {
+                  backgroundColor: "rgba(15, 23, 42, 0.9)",
+                  padding: 12,
+                  titleFont: {
+                    size: 13,
+                    weight: "600",
+                  },
+                  bodyFont: {
+                    size: 12,
+                  },
+                  borderColor: "#e2e8f0",
+                  borderWidth: 1,
+                  displayColors: true,
+                  usePointStyle: true,
+                },
+              },
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  grid: {
+                    color: "#f1f5f9",
+                    drawBorder: false,
+                  },
+                  ticks: {
+                    font: {
+                      size: 11,
+                    },
+                    color: "#94a3b8",
+                  },
+                },
+                x: {
+                  grid: {
+                    display: false,
+                    drawBorder: false,
+                  },
+                  ticks: {
+                    font: {
+                      size: 11,
+                    },
+                    color: "#94a3b8",
+                  },
+                },
+              },
+              interaction: {
+                intersect: false,
+                mode: "index",
+              },
+            },
+          });
+
+          // Store chart data globally
+          window.chartData = chartData;
+        }
+      });
+
+      // Update Chart Function
+      function updateChart(period) {
+        // Update active button
+        document.querySelectorAll(".filter-btn").forEach((btn) => {
+          btn.classList.remove("active");
+        });
+        event.target.classList.add("active");
+
+        // Update chart data
+        if (window.activityChart && window.chartData) {
+          window.activityChart.data = window.chartData[period];
+          window.activityChart.update("active");
+        }
+      }
+
+      // Filter Users Function
+      function filterUsers() {
+        const statusFilter = document.getElementById("statusFilter").value;
+        const userTypeFilter = document.getElementById("userTypeFilter").value;
+        const deviceFilter = document.getElementById("deviceFilter").value;
+
+        const rows = document.querySelectorAll("#userTableBody tr");
+
+        rows.forEach((row) => {
+          const status = row.getAttribute("data-status");
+          const type = row.getAttribute("data-type");
+          const device = row.getAttribute("data-device");
+
+          const statusMatch = statusFilter === "all" || status === statusFilter;
+          const typeMatch = userTypeFilter === "all" || type === userTypeFilter;
+          const deviceMatch = deviceFilter === "all" || device === deviceFilter;
+
+          if (statusMatch && typeMatch && deviceMatch) {
+            row.style.display = "";
+          } else {
+            row.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
